@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'Maven'
-    }
-
     stages {
 
         stage('Clone') {
@@ -16,42 +12,33 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo '===== Compiling Spring Boot App ====='
+                echo '===== Compiling ====='
                 sh 'mvn clean compile'
             }
         }
 
         stage('Test') {
             steps {
-                echo '===== Running Unit Tests ====='
+                echo '===== Running Tests ====='
                 sh 'mvn test'
             }
         }
 
         stage('Package') {
             steps {
-                echo '===== Packaging into JAR ====='
+                echo '===== Packaging JAR ====='
                 sh 'mvn package -DskipTests'
-            }
-        }
-
-        stage('Verify JAR') {
-            steps {
-                echo '===== Checking JAR file created ====='
-                sh 'ls -lh target/*.jar'
             }
         }
 
     }
 
-
-
     post {
         success {
-            echo '✅ Spring Boot app built and tested successfully!'
+            echo '✅ Build Successful!'
         }
         failure {
-            echo '❌ Build failed! Check console output above.'
+            echo '❌ Build Failed!'
         }
     }
 }
