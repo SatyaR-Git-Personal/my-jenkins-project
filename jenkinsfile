@@ -45,6 +45,7 @@ pipeline {
     }
 
 
+
     post {
         success {
             echo '✅ Spring Boot app built and tested successfully!'
