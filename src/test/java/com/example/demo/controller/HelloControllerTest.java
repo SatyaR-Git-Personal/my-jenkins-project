@@ -20,5 +20,6 @@ class HelloControllerTest {
       assertEquals("Application is running", response);
       System.out.println("DELETE LATER");
       System.out.println("DELETE MUST");
+      System.out.println("DELETE Last 3 lines");
    }
 }
