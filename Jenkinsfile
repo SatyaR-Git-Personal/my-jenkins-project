@@ -9,9 +9,6 @@ pipeline {
                 checkout scm
             }
         }
-        docker.image('maven:3.9.11-eclipse-temurin-21').inside {
-            sh 'mvn clean package'
-        }
 
         stage('Build') {
             steps {
