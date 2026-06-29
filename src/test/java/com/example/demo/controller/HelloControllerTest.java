@@ -18,8 +18,6 @@ class HelloControllerTest {
    void testStatus() {
       String response= controller.status();
       assertEquals("Application is running", response);
-      System.out.println("DELETE LATER");
-      System.out.println("DELETE MUST");
-      System.out.println("DELETE Last 3 lines");
+      System.out.println("Testing working fine");
    }
 }
